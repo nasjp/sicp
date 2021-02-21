@@ -4,5 +4,5 @@
 
 ```sh
 docker build . -t scheme:latest
-docker run --rm -it -v $PWD:/app:delegated scheme sh -c 'cat hello.ss | scheme --eval'
+docker run --rm -it -v $PWD:/app:delegated scheme sh -c 'scheme < hello.ss'
 ```
