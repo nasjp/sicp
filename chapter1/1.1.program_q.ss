@@ -58,12 +58,34 @@
 
 ;;;;; 3
 
-(define (square x) (* x x))
+(define (square-big-two x y z)
+  (cond ((and (>= x z) (>= y z)) (+ (* x x) (* y y)))
+        ((and (>= x y) (>= z y)) (+ (* x x) (* z z)))
+        ((and (>= y x) (>= z x)) (+ (* y y) (* z z)))
+  )
+)
 
-; (define (big-two x y z)
-;   (cond (and (> x y) (> x z))
-;   )
-; )
+(square-big-two 3 4 5)
+(square-big-two 4 5 3)
 
-; (define (square-big-two x y z)
-; )
+;;;;; 4
+
+(define (a-plus-abs-b a b)
+  ((if (> b 0) + -) a b)
+)
+
+(a-plus-abs-b 1 -2)
+(a-plus-abs-b 1 2)
+
+;;;;; 5
+
+(define (p) (p))
+
+(define (test x y)
+  (if (= x 0)
+    0
+    y
+  )
+)
+
+; (test 0 (p))
