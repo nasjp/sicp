@@ -2,7 +2,14 @@
 
 <https://amzn.to/3pDWT0v>
 
+## run all practice
+
 ```sh
-docker build . -t scheme:latest
-docker run --rm -it -v $PWD:/app:delegated scheme sh -c 'scheme < hello.ss'
+docker compose run --rm dev
+```
+
+## grep
+
+```sh
+docker compose run --rm dev bash run.bash hello
 ```
